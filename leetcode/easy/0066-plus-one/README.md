@@ -55,8 +55,8 @@ Thus, the result should be [1,0].
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 11.5 MB (beats 62.21%)  
-**Submitted:** 2026-08-12T11:12:10.612Z  
+**Memory:** 11.6 MB (beats 61.87%)  
+**Submitted:** 2026-08-15T10:44:43.676Z  
 
 ```cpp
 class Solution {
