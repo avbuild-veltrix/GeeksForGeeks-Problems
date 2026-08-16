@@ -41,7 +41,7 @@ Explanation: 505 is equal to 312500000.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-16T12:55:10.970Z  
+**Submitted:** 2026-08-16T12:55:31.172Z  
 
 ```cpp
 class Solution {
