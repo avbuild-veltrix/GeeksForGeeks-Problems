@@ -28,7 +28,7 @@ Explanation: For dice facing number 5 opposite face will have the number 2.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-17T11:49:21.766Z  
+**Submitted:** 2026-08-17T11:49:37.946Z  
 
 ```cpp
 class Solution {
