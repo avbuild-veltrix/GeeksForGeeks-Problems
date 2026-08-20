@@ -31,7 +31,7 @@ Explanation: Converting rows into columns and columns into rows.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T07:39:14.626Z  
+**Submitted:** 2026-08-20T11:43:35.774Z  
 
 ```cpp
 class Solution {
