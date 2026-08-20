@@ -34,7 +34,7 @@ Output: [[2, 4],
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T09:01:10.913Z  
+**Submitted:** 2026-08-20T12:05:38.179Z  
 
 ```cpp
 class Solution {
