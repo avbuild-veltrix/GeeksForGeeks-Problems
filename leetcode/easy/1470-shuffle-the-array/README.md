@@ -46,21 +46,20 @@ Output: [1,2,1,2]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 4 ms (beats 65.64%)  
+**Runtime:** 2 ms (beats 78.71%)  
 **Memory:** 13.5 MB (beats 52.83%)  
-**Submitted:** 2026-09-02T05:17:12.817Z  
+**Submitted:** 2026-09-02T05:18:05.776Z  
 
 ```cpp
 class Solution {
 public:
-    vector<int> shuffle(vector<int>& nums, int n) {
-        vector<int> x = {};
-        for(int i = 0; i < n; i++){
-            x.push_back(nums[i]);
-            x.push_back(nums[n+i]);
-        }
-        return x;
-    }
+    vector<int> shuffle(vector<int>& nums, int n){
+        vector<int>vec;
+        for(int i=0;i<(nums.size()/2);i++){
+            vec.push_back(nums[i]);
+            vec.push_back(nums[n]);
+            n++;
+    }return vec;}
 };
 ```
 
