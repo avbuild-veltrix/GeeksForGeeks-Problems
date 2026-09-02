@@ -46,9 +46,9 @@ Output: [1,2,1,2]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 2 ms (beats 78.71%)  
-**Memory:** 13.5 MB (beats 52.83%)  
-**Submitted:** 2026-09-02T05:18:05.776Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 13.4 MB (beats 52.83%)  
+**Submitted:** 2026-09-02T05:19:06.731Z  
 
 ```cpp
 class Solution {
@@ -59,7 +59,8 @@ public:
             vec.push_back(nums[i]);
             vec.push_back(nums[n]);
             n++;
-    }return vec;}
+    }
+    return vec;}
 };
 ```
 
