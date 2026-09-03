@@ -51,8 +51,8 @@ Output: [0,0,0,0]
 
 **Language:** C++  
 **Runtime:** 11 ms (beats 31.30%)  
-**Memory:** 14.3 MB (beats 28.89%)  
-**Submitted:** 2026-09-03T06:32:19.586Z  
+**Memory:** 14.3 MB (beats 52.62%)  
+**Submitted:** 2026-09-03T06:34:24.184Z  
 
 ```cpp
 class Solution {
@@ -62,7 +62,7 @@ public:
         for(int i = 0; i < nums.size(); i++){
             int count = 0;
             for(int j = 0; j < nums.size(); j++){
-                if(nums[j] < nums[i]){
+                if(nums[j] < nums[i] && i != j){
                     count++;
                 }
             }
