@@ -50,9 +50,9 @@ Output: [0,0,0,0]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 7 ms (beats 54.58%)  
-**Memory:** 14.2 MB (beats 52.62%)  
-**Submitted:** 2026-09-03T06:35:33.198Z  
+**Runtime:** 11 ms (beats 31.30%)  
+**Memory:** 14.2 MB (beats 77.87%)  
+**Submitted:** 2026-09-03T06:35:40.191Z  
 
 ```cpp
 class Solution {
