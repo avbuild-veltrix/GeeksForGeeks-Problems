@@ -50,15 +50,15 @@ Output: [0,0,0,0]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 11 ms (beats 31.30%)  
-**Memory:** 14.3 MB (beats 52.62%)  
-**Submitted:** 2026-09-03T06:34:24.184Z  
+**Runtime:** 7 ms (beats 54.58%)  
+**Memory:** 14.2 MB (beats 52.62%)  
+**Submitted:** 2026-09-03T06:35:33.198Z  
 
 ```cpp
 class Solution {
 public:
     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
-        vector<int> answer(nums.size(), 0);
+        vector<int> answer = {};
         for(int i = 0; i < nums.size(); i++){
             int count = 0;
             for(int j = 0; j < nums.size(); j++){
@@ -66,7 +66,7 @@ public:
                     count++;
                 }
             }
-            answer[i] = count;
+            answer.push_back(count);
         }
         return answer;
     }
