@@ -46,8 +46,8 @@ Explanation: There are only two items matching the given rule, which are ["phone
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 36.3 MB (beats 36.67%)  
-**Submitted:** 2026-09-04T02:59:48.267Z  
+**Memory:** 36.4 MB (beats 36.67%)  
+**Submitted:** 2026-09-04T02:59:57.698Z  
 
 ```cpp
 class Solution {
