@@ -44,9 +44,9 @@ Every integer in nums2 is present in nums1. Therefore, answer[1] = [].
 ## Solution
 
 **Language:** C++  
-**Runtime:** 135 ms (beats 5.18%)  
+**Runtime:** 151 ms (beats 5.18%)  
 **Memory:** 31.2 MB (beats 95.42%)  
-**Submitted:** 2026-09-05T14:14:42.708Z  
+**Submitted:** 2026-09-05T14:15:36.768Z  
 
 ```cpp
 class Solution {
