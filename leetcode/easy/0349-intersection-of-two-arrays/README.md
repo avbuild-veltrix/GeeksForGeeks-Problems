@@ -35,9 +35,9 @@ Explanation: [4,9] is also accepted.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 3 ms (beats 38.17%)  
-**Memory:** 14 MB (beats 81.22%)  
-**Submitted:** 2026-09-05T14:09:55.689Z  
+**Runtime:** 5 ms (beats 13.22%)  
+**Memory:** 13.9 MB (beats 91.14%)  
+**Submitted:** 2026-09-05T14:10:05.837Z  
 
 ```cpp
 class Solution {
