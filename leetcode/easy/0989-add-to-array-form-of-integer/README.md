@@ -51,37 +51,57 @@ Explanation: 215 + 806 = 1021
 ## Solution
 
 **Language:** C++  
-**Runtime:** 3 ms (beats 28.26%)  
-**Memory:** 31.6 MB (beats 65.93%)  
-**Submitted:** 2026-09-09T07:20:13.462Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 32.8 MB (beats 40.92%)  
+**Submitted:** 2026-09-09T07:22:10.791Z  
 
 ```cpp
+// class Solution {
+// public:
+//     vector<int> addToArrayForm(vector<int>& num, int k) {
+
+//         int i = num.size() - 1;
+
+//         while(i >= 0 && k > 0) {
+
+//             num[i] += k % 10;
+
+//             k = k / 10;
+
+//             if(num[i] >= 10) {
+//                 num[i] -= 10;
+//                 k += 1;
+//             }
+
+//             i--;
+//         }
+
+//         while(k > 0) {
+//             num.insert(num.begin(), k % 10);
+//             k = k / 10;
+//         }
+
+//         return num;
+//     }
+// };
+
 class Solution {
 public:
     vector<int> addToArrayForm(vector<int>& num, int k) {
-
-        int i = num.size() - 1;
-
-        while(i >= 0 && k > 0) {
-
-            num[i] += k % 10;
-
-            k = k / 10;
-
-            if(num[i] >= 10) {
-                num[i] -= 10;
-                k += 1;
+        vector<int> res;
+        int i=num.size()-1;
+        int temp=0;
+        while(i>=0||k>0){
+            if(i>=0){
+                k+=num[i];
             }
-
-            i--;
+            res.push_back(k%10);
+            k=k/10;
+            i=i-1;
         }
-
-        while(k > 0) {
-            num.insert(num.begin(), k % 10);
-            k = k / 10;
-        }
-
-        return num;
+        reverse(res.begin(),res.end());
+        return res;
+        
     }
 };
 ```
