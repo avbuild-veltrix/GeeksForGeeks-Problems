@@ -45,30 +45,28 @@ The array answer is [|0 - 0|] = [0].
 ## Solution
 
 **Language:** C++  
-**Runtime:** 4 ms (beats 14.26%)  
-**Memory:** 15.6 MB (beats 8.98%)  
-**Submitted:** 2026-09-10T06:45:36.074Z  
+**Runtime:** 6 ms (beats 11.73%)  
+**Memory:** 15.7 MB (beats 5.21%)  
+**Submitted:** 2026-09-10T07:27:34.673Z  
 
 ```cpp
 class Solution {
 public:
     vector<int> leftRightDifference(vector<int>& nums) {
+        int n = nums.size();
         vector<int> rightSum = {};
         vector<int> leftSum = {};
-        vector<int> answer = {};
+        vector<int> answer(n,0);
         int rSum = 0, lSum = 0;
         for(int i = nums.size()-1; i >= 0; i--){
             rightSum.insert(rightSum.begin(), rSum);
             rSum += nums[i];
+            answer[i] += rSum;
         }
         for(int i = 0; i < nums.size(); i++){
             leftSum.push_back(lSum);
             lSum += nums[i];
-        }
-        int ans = 0;
-        for(int i = 0; i < rightSum.size(); i++){
-            ans = abs(rightSum[i] - leftSum[i]);
-            answer.push_back(ans);
+            answer[i] = abs(answer[i] - lSum);
         }
         return answer;
     }
