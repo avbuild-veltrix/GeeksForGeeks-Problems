@@ -64,9 +64,9 @@ Any permutation of [11,8,6,6,7] is accepted.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 42 ms (beats 36.32%)  
-**Memory:** 87.1 MB (beats 53.68%)  
-**Submitted:** 2026-09-12T13:09:45.714Z  
+**Runtime:** 34 ms (beats 62.11%)  
+**Memory:** 85 MB (beats 69.47%)  
+**Submitted:** 2026-09-12T13:14:27.313Z  
 
 ```cpp
 class Solution {
@@ -74,20 +74,27 @@ public:
     vector<int> getStrongest(vector<int>& arr, int k) {
         int n = arr.size();
 
+        // 1. Sort the array
         sort(arr.begin(), arr.end());
 
-        int centre = arr[(n-1) / 2];
+        // 2. Find the median
+        int median = arr[(n - 1) / 2];
 
+        // 3. Two pointers
         int left = 0;
         int right = n - 1;
 
         vector<int> ans;
+        ans.reserve(k);
 
-        while(ans.size() < k) {
-            int leftStrength = abs(arr[left] - centre);
-            int rightStrength = abs(arr[right] - centre);
+        // 4. Pick the k strongest values
+        while (ans.size() < k) {
 
-            if(rightStrength >= leftStrength) {
+            int leftStrength = abs(arr[left] - median);
+            int rightStrength = abs(arr[right] - median);
+
+            // If equal strength, choose the larger value
+            if (rightStrength >= leftStrength) {
                 ans.push_back(arr[right]);
                 right--;
             }
