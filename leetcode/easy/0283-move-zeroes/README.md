@@ -40,28 +40,26 @@ Output: [0]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 34 ms (beats 6.60%)  
-**Memory:** 23.8 MB (beats 82.75%)  
-**Submitted:** 2026-09-13T05:32:27.847Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 24 MB (beats 7.85%)  
+**Submitted:** 2026-09-13T05:40:26.002Z  
 
 ```cpp
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        int n = nums.size();
-        for(int i = 0; i < n; i++){
-            int k = 1+i;
-            if(nums[i] == 0){
-                while(k < n && nums[k] == 0){
-                    k++;
-                }
-                if(k < n){
-                    nums[i] = nums[k];
-                    nums[k] = 0;
-                    k++;
-                }
+        int e = 0;
 
+        for(int f = 0; f < nums.size(); f++) {
+            if(nums[f] != 0) {
+                nums[e] = nums[f];
+                e++;
             }
+        }
+
+        while(e < nums.size()) {
+            nums[e] = 0;
+            e++;
         }
     }
 };
