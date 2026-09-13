@@ -40,17 +40,17 @@ Output: [0]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.1 MB  
-**Submitted:** 2026-09-13T05:30:23.573Z  
+**Runtime:** 34 ms (beats 6.60%)  
+**Memory:** 23.8 MB (beats 82.75%)  
+**Submitted:** 2026-09-13T05:32:27.847Z  
 
 ```cpp
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
         int n = nums.size();
-        int k = 1;
         for(int i = 0; i < n; i++){
+            int k = 1+i;
             if(nums[i] == 0){
                 while(k < n && nums[k] == 0){
                     k++;
