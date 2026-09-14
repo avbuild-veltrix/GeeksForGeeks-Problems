@@ -26,7 +26,7 @@ Explanation: 3rd smallest element in the given array is 7.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-14T06:12:57.883Z  
+**Submitted:** 2026-09-14T06:13:18.034Z  
 
 ```cpp
 class Solution {
