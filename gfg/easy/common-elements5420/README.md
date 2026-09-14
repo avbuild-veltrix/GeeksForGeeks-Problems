@@ -32,7 +32,7 @@ Explanation: The common elements in sorted order are 3, 7, 9.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-14T07:15:51.971Z  
+**Submitted:** 2026-09-14T07:16:52.358Z  
 
 ```cpp
 class Solution {
