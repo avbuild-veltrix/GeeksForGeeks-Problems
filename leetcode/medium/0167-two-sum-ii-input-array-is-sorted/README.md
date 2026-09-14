@@ -54,9 +54,9 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-09-14T06:54:36.413Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 25.6 MB (beats 5.21%)  
+**Submitted:** 2026-09-14T06:59:54.675Z  
 
 ```cpp
 // class Solution {
@@ -80,20 +80,18 @@ public:
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> ans(2);
         int n = nums.size();
-        int j = n-1;
-        for(int i = 0; i < n; i++){
+        int i = 0,j = n-1;
+        while(i < j){
             int sum = nums[i]+nums[j];
             if(sum > target){
                 j--;
             }else if(sum < target){
                 i++;
             }else{
-                ans[0] = i+1;
-                ans[1] = j+1;
-                return ans;
+                return {i+1, j+1};
             }
         }
-        return ans; // TC = O(n).
+        return {}; // TC = O(n).
     }
 };
 ```
