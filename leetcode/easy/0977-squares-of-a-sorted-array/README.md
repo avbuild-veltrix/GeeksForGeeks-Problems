@@ -41,9 +41,9 @@ Output: [4,9,9,49,121]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 7 ms (beats 29.46%)  
-**Memory:** 30.4 MB (beats 38.70%)  
-**Submitted:** 2026-09-14T05:00:39.371Z  
+**Runtime:** 372 ms (beats 6.44%)  
+**Memory:** 30.3 MB (beats 66.30%)  
+**Submitted:** 2026-09-14T05:04:08.001Z  
 
 ```cpp
 class Solution {
@@ -53,7 +53,14 @@ public:
         for(int i = 0; i < n; i++){
             nums[i] = nums[i] * nums[i];
         }
-        sort(nums.begin(), nums.end());
+        // sort(nums.begin(), nums.end());
+        for(int i = 1; i < n; i++){
+            int j = i; 
+            while(j > 0 && nums[j] < nums[j-1]){
+                swap(nums[j], nums[j-1]);
+                j--;
+            }
+        }
         return nums;
     }
 };
