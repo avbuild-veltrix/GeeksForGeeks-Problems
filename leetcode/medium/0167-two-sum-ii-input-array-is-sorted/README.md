@@ -55,8 +55,8 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 8.4 MB  
-**Submitted:** 2026-09-14T06:54:00.556Z  
+**Memory:** 8.2 MB  
+**Submitted:** 2026-09-14T06:54:36.413Z  
 
 ```cpp
 // class Solution {
@@ -88,13 +88,12 @@ public:
             }else if(sum < target){
                 i++;
             }else{
-                i++;
                 ans[0] = i+1;
                 ans[1] = j+1;
                 return ans;
             }
         }
-        return ans; // TC = O(n^2).
+        return ans; // TC = O(n).
     }
 };
 ```
