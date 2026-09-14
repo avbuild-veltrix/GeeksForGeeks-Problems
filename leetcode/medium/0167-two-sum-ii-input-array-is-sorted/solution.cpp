@@ -27,12 +27,11 @@ public:
             }else if(sum < target){
                 i++;
             }else{
-                i++;
                 ans[0] = i+1;
                 ans[1] = j+1;
                 return ans;
             }
         }
-        return ans; // TC = O(n^2).
+        return ans; // TC = O(n).
     }
 };
