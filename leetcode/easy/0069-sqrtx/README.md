@@ -40,35 +40,53 @@ Explanation: The square root of 8 is 2.82842..., and since we round it down to t
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 8.5 MB (beats 51.21%)  
-**Submitted:** 2026-09-02T08:45:11.701Z  
+**Memory:** 8.5 MB (beats 51.12%)  
+**Submitted:** 2026-09-15T08:24:19.128Z  
 
 ```cpp
+// class Solution {
+// public:
+//     int mySqrt(int x) {
+//         if (x == 0 || x == 1)
+//             return x;
+
+//         int start = 1;
+//         int end = x;
+
+//         while (start <= end) {
+//             int mid = start + (end - start) / 2;
+
+//             long long square = 1LL * mid * mid;
+
+//             if (square == x)
+//                 return mid;
+
+//             else if (square < x)
+//                 start = mid + 1;
+
+//             else
+//                 end = mid - 1;
+//         }
+
+//         return end;
+//     }
+// };
 class Solution {
 public:
-    int mySqrt(int x) {
-        if (x == 0 || x == 1)
-            return x;
+    long long mySqrt(long long x) {
+        long long high = x, low = 0,mid;
+        long long ans = 0;
 
-        int start = 1;
-        int end = x;
-
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-
-            long long square = 1LL * mid * mid;
-
-            if (square == x)
-                return mid;
-
-            else if (square < x)
-                start = mid + 1;
-
-            else
-                end = mid - 1;
+        while(low <= high){
+            mid = (low + high)/2;
+            if(mid * mid <= x){
+                ans = mid;
+                low = mid + 1;
+            }else{
+                high = mid - 1;
+            }
         }
-
-        return end;
+        return ans;
     }
 };
 ```
