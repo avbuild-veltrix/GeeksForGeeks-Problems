@@ -39,7 +39,7 @@ Explanation: No element less than or equal to 0 is found. So, output is -1.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-15T07:25:44.270Z  
+**Submitted:** 2026-09-15T07:25:51.217Z  
 
 ```cpp
 class Solution {
