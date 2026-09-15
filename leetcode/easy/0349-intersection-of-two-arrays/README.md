@@ -35,34 +35,55 @@ Explanation: [4,9] is also accepted.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 5 ms (beats 13.22%)  
-**Memory:** 13.9 MB (beats 91.14%)  
-**Submitted:** 2026-09-05T14:10:05.837Z  
+**Runtime:** 0 ms  
+**Memory:** 8.5 MB  
+**Submitted:** 2026-09-15T04:36:37.039Z  
 
 ```cpp
+// class Solution {
+// public:
+//     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+//         vector<int> ans = {};
+//         for(int i = 0; i < nums1.size(); i++){
+//             for(int j = 0; j < nums2.size(); j++){
+//                 if(nums1[i] == nums2[j]){
+//                     bool found = false;
+
+//                     for(int k = 0; k < ans.size(); k++){
+//                         if(ans[k] == nums1[i]){
+//                             found = true;
+//                             break;
+//                         }
+//                     }
+//                     if(!found){
+//                         ans.push_back(nums1[i]);
+//                     }
+//                     break;
+//                 }
+//             }
+//         }
+//         return ans;
+//     }
+// };
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        vector<int> ans = {};
+        vector<int> result;
         for(int i = 0; i < nums1.size(); i++){
             for(int j = 0; j < nums2.size(); j++){
-                if(nums1[i] == nums2[j]){
-                    bool found = false;
-
-                    for(int k = 0; k < ans.size(); k++){
-                        if(ans[k] == nums1[i]){
-                            found = true;
-                            break;
-                        }
-                    }
-                    if(!found){
-                        ans.push_back(nums1[i]);
-                    }
-                    break;
+                if( i != j && nums1[i] == nums2[j]){
+                    result.push_back(nums1[i]);
                 }
             }
         }
-        return ans;
+        for(int i = 0; i < result.size(); i++){
+            for(int j = 0; j < result.size(); j++){
+                if(i != j && result[i] == result[j]){
+                    result.erase(result.begin() + i);
+                }
+            }
+        }
+        return result;
     }
 };
 ```
