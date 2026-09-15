@@ -35,9 +35,9 @@ Explanation: [4,9] is also accepted.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.5 MB  
-**Submitted:** 2026-09-15T04:36:37.039Z  
+**Runtime:** 11 ms (beats 5.07%)  
+**Memory:** 14 MB (beats 72.40%)  
+**Submitted:** 2026-09-15T04:39:29.894Z  
 
 ```cpp
 // class Solution {
@@ -71,7 +71,7 @@ public:
         vector<int> result;
         for(int i = 0; i < nums1.size(); i++){
             for(int j = 0; j < nums2.size(); j++){
-                if( i != j && nums1[i] == nums2[j]){
+                if(nums1[i] == nums2[j]){
                     result.push_back(nums1[i]);
                 }
             }
@@ -79,7 +79,8 @@ public:
         for(int i = 0; i < result.size(); i++){
             for(int j = 0; j < result.size(); j++){
                 if(i != j && result[i] == result[j]){
-                    result.erase(result.begin() + i);
+                    result.erase(result.begin() + j);
+                    j--;
                 }
             }
         }
