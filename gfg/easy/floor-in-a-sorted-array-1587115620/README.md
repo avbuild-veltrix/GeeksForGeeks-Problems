@@ -39,29 +39,33 @@ Explanation: No element less than or equal to 0 is found. So, output is -1.
 **Language:** C++  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-15T07:25:51.217Z  
+**Submitted:** 2026-09-15T07:39:17.650Z  
 
 ```cpp
 class Solution {
-  public:
+public:
     int findFloor(vector<int>& arr, int target) {
-        // code here
-        int low, high, mid, ans = -1;
-        high = arr.size() - 1;
-        low = 0;
-        while(low <= high){
-            mid = (low + high)/2;
-            if(arr[mid] <= target){
+
+        int low = 0;
+        int high = arr.size() - 1;
+        int ans = -1;
+
+        while(low <= high) {
+
+            int mid = (low + high) / 2;
+
+            if(arr[mid] <= target) {
                 ans = mid;
                 low = mid + 1;
-            }else{
+            }
+            else {
                 high = mid - 1;
             }
         }
+
         return ans;
     }
 };
-
 ```
 
 ---
