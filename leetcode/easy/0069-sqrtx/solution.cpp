@@ -60,15 +60,34 @@
 // };
 
 
+// class Solution {
+// public:
+//     long long mySqrt(long long x) {
+//         long long high = x, mid, low = 0;
+//         long long ans = 0;
+
+//         while(low <= high){
+//             mid = (low + high)/2;
+//             if(mid * mid <= x){
+//                 ans = mid;
+//                 low = mid + 1;
+//             }else{
+//                 high = mid - 1;
+//             }
+//         }
+//         return ans;
+//     }
+// };
+
+
 class Solution {
 public:
     long long mySqrt(long long x) {
-        long long high = x, mid, low = 0;
+        long long high = x, low = 0, mid;
         long long ans = 0;
-
         while(low <= high){
-            mid = (low + high)/2;
-            if(mid * mid <= x){
+            mid = low + (high - low)/2;
+            if(mid*mid <= x){
                 ans = mid;
                 low = mid + 1;
             }else{
