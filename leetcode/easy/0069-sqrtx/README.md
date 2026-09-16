@@ -39,9 +39,9 @@ Explanation: The square root of 8 is 2.82842..., and since we round it down to t
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 8.5 MB (beats 51.12%)  
-**Submitted:** 2026-09-15T08:24:19.128Z  
+**Runtime:** 13 ms (beats 13.77%)  
+**Memory:** 8.4 MB (beats 86.99%)  
+**Submitted:** 2026-09-16T10:55:34.042Z  
 
 ```cpp
 // class Solution {
@@ -71,24 +71,50 @@ Explanation: The square root of 8 is 2.82842..., and since we round it down to t
 //         return end;
 //     }
 // };
+// class Solution {
+// public:
+//     long long mySqrt(long long x) {
+//         long long high = x, low = 0,mid;
+//         long long ans = 0;
+
+//         while(low <= high){
+//             mid = (low + high)/2;
+//             if(mid * mid <= x){
+//                 ans = mid;
+//                 low = mid + 1;
+//             }else{
+//                 high = mid - 1;
+//             }
+//         }
+//         return ans;
+//     }
+// };
+
 class Solution {
 public:
     long long mySqrt(long long x) {
-        long long high = x, low = 0,mid;
-        long long ans = 0;
-
-        while(low <= high){
-            mid = (low + high)/2;
-            if(mid * mid <= x){
-                ans = mid;
-                low = mid + 1;
-            }else{
-                high = mid - 1;
+        for(long long i = 0; i <= x; i++){
+            if(i*i == x){
+                return i;
+            }
+            if(i*i > x){
+                return i-1;
             }
         }
-        return ans;
+        return 0;
     }
 };
+// class Solution {
+// public:
+//     long long mySqrt(long long x) {
+//         long long, high, mid, low;
+//         long long ans = 0;
+
+//         qhile(low <= high){
+
+//         }
+//     }
+// };
 ```
 
 ---
