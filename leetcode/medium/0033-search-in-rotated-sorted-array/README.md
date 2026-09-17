@@ -53,7 +53,7 @@ Output: -1
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
 **Memory:** 15.3 MB (beats 37.50%)  
-**Submitted:** 2026-09-17T05:16:39.345Z  
+**Submitted:** 2026-09-17T05:16:57.729Z  
 
 ```cpp
 class Solution {
@@ -68,7 +68,7 @@ public:
                 return mid;
             }
             if(nums[low] <= nums[mid]){
-                if(nums[low] <= target && target < nums[mid]){
+                if(nums[low] <= target && target <= nums[mid]){
                     high = mid - 1;
                 }else{
                     low = mid + 1;
