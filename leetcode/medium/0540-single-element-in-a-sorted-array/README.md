@@ -39,8 +39,8 @@ Output: 10
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 26.1 MB (beats 94.82%)  
-**Submitted:** 2026-09-17T03:47:45.214Z  
+**Memory:** 26.2 MB (beats 71.61%)  
+**Submitted:** 2026-09-17T04:15:54.656Z  
 
 ```cpp
 // class Solution {
@@ -67,6 +67,30 @@ Output: 10
 // };
 
 
+// class Solution {
+// public:
+//     int singleNonDuplicate(vector<int>& array) {
+//         int n = array.size();
+//         int high = n-1;
+//         int low = 0;
+//         int mid;
+//         while(low < high){
+//             mid = low + (high - low)/2;
+//             if(mid%2 == 1){
+//                 mid--;
+//             }
+//             if(array[mid] == array[mid + 1]){
+//                 low = mid + 2;
+//             }else{
+//                 high = mid - 1;
+//             }
+//         }
+//         int ans = array[low];
+//         return ans;
+//     }
+// };
+
+
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& array) {
@@ -74,19 +98,27 @@ public:
         int high = n-1;
         int low = 0;
         int mid;
-        while(low < high){
-            mid = low + (high - low)/2;
-            if(mid%2 == 1){
-                mid--;
+        while(low <= high){
+            int mid = low + (high - low)/2;
+            if ((mid == 0 || array[mid] != array[mid - 1]) &&
+                (mid == n - 1 || array[mid] != array[mid + 1])
+            ) {
+                return array[mid];
             }
-            if(array[mid] == array[mid + 1]){
-                low = mid + 2;
+            int f = mid, s = mid;
+            if(mid > 0 && array[mid] == array[mid-1]){
+                f = mid - 1;
             }else{
-                high = mid - 1;
+                s = mid+1;
+            }
+            int leftLength = f - low;
+            if(leftLength % 2 == 1){
+                high = f - 1;
+            }else{
+                low = s + 1;
             }
         }
-        int ans = array[low];
-        return ans;
+        return 0;
     }
 };
 ```
