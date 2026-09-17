@@ -38,10 +38,29 @@ Explanation: Because the 4th row is incomplete, we return 3.
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 8.7 MB (beats 96.41%)  
-**Submitted:** 2026-09-17T05:32:26.408Z  
+**Memory:** 8.8 MB (beats 36.46%)  
+**Submitted:** 2026-09-17T05:34:07.206Z  
 
 ```cpp
+// class Solution {
+// public:
+//     int arrangeCoins(int n) {
+//         int low = 1; 
+//         int high = n;
+//         while(low <= high){
+//             int mid = low + (high - low)/2;
+//             long long coins = 1LL * mid*(mid + 1)/2;
+//             if(coins <= n){
+//                 low = mid + 1;
+//             }else{
+//                 high = mid - 1;
+//             }
+//         }
+//         return low - 1;
+//     }
+// };
+
+
 class Solution {
 public:
     int arrangeCoins(int n) {
@@ -56,7 +75,7 @@ public:
                 high = mid - 1;
             }
         }
-        return low - 1;
+        return high;
     }
 };
 ```
