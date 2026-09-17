@@ -26,8 +26,12 @@ public:
             int mid = low + (high - low)/2;
             long long coins = 1LL * mid*(mid + 1)/2;
             if(coins <= n){
+                // mid rows are possible
+                // Try more rows
                 low = mid + 1;
             }else{
+                // mid rows are not possible
+                // Try fewer rows
                 high = mid - 1;
             }
         }
