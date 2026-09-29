@@ -42,8 +42,8 @@ Your task is to solve it in `O(log(n))` time complexity.
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 63.4 MB (beats 79.24%)  
-**Submitted:** 2026-09-16T13:00:49.010Z  
+**Memory:** 63.4 MB (beats 78.69%)  
+**Submitted:** 2026-09-29T13:43:30.252Z  
 
 ```cpp
 class Solution {
