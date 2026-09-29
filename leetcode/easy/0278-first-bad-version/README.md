@@ -42,9 +42,9 @@ Output: 1
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 7.8 MB (beats 94.71%)  
-**Submitted:** 2026-09-29T13:42:46.635Z  
+**Runtime:** 2 ms (beats 56.85%)  
+**Memory:** 7.9 MB (beats 71.57%)  
+**Submitted:** 2026-09-29T13:43:01.764Z  
 
 ```cpp
 // The API isBadVersion is defined for you.
