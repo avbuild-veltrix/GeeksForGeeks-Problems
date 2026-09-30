@@ -55,8 +55,8 @@ Output: 1
 
 **Language:** C++  
 **Runtime:** 2 ms (beats 56.29%)  
-**Memory:** 7.9 MB (beats 43.11%)  
-**Submitted:** 2026-09-30T11:04:23.544Z  
+**Memory:** 7.8 MB (beats 94.98%)  
+**Submitted:** 2026-09-30T11:05:28.796Z  
 
 ```cpp
 /** 
@@ -76,11 +76,9 @@ public:
         while(low <= high){
             int mid = low + (high - low)/2;
 
-            int result = guess(mid);
-
-            if(result == 0){
+            if(guess(mid) == 0){
                 return mid;
-            }else if(result == -1){
+            }else if(guess(mid) == -1){
                 high = mid - 1;
             }else{
                 low = mid + 1;
