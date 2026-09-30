@@ -55,8 +55,8 @@ Output: 1
 
 **Language:** C++  
 **Runtime:** 2 ms (beats 56.29%)  
-**Memory:** 7.8 MB (beats 94.98%)  
-**Submitted:** 2026-09-30T11:05:28.796Z  
+**Memory:** 8 MB (beats 43.11%)  
+**Submitted:** 2026-09-30T11:06:09.508Z  
 
 ```cpp
 /** 
@@ -72,7 +72,7 @@ class Solution {
 public:
     int guessNumber(int n) {
         int high = n;
-        int low = 0;
+        int low = 1;
         while(low <= high){
             int mid = low + (high - low)/2;
 
@@ -84,7 +84,7 @@ public:
                 low = mid + 1;
             }
         }
-        return low;
+        return -1;
     }
 };
 ```
