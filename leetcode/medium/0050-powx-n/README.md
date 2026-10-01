@@ -47,8 +47,8 @@ Explanation: 2-2 = 1/22 = 1/4 = 0.25
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 8.7 MB (beats 13.97%)  
-**Submitted:** 2026-10-01T11:23:30.760Z  
+**Memory:** 8.6 MB (beats 44.04%)  
+**Submitted:** 2026-10-01T11:54:48.663Z  
 
 ```cpp
 // class Solution {
@@ -82,7 +82,7 @@ public:
         long long n = b;
 
         if(n < 0) {
-            return 1 / Power(a, -n);
+            return 1 / Power(a, n);
         }
 
         return Power(a, n);
