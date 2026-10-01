@@ -57,9 +57,9 @@ Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.3 MB  
-**Submitted:** 2026-10-01T05:13:24.324Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 14.2 MB (beats 11.36%)  
+**Submitted:** 2026-10-01T05:13:37.560Z  
 
 ```cpp
 class Solution {
@@ -73,7 +73,7 @@ public:
             if(nums[mid] > nums[high]){
                 low = mid + 1;
             }else{
-                high = mid - 1;
+                high = mid;
             }
         }
         return nums[low];
