@@ -29,7 +29,7 @@ public:
         long long n = b;
 
         if(n < 0) {
-            return 1 / Power(a, -n);
+            return 1 / Power(a, n);
         }
 
         return Power(a, n);
