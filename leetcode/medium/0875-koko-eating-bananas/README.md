@@ -49,21 +49,15 @@ Output: 23
 ## Solution
 
 **Language:** C++  
-**Runtime:** 10 ms (beats 38.85%)  
-**Memory:** 22.9 MB (beats 57.99%)  
-**Submitted:** 2026-10-05T13:45:20.358Z  
+**Runtime:** 4 ms (beats 86.24%)  
+**Memory:** 23.1 MB (beats 23.49%)  
+**Submitted:** 2026-10-05T13:46:20.843Z  
 
 ```cpp
 class Solution {
 public:
     int minEatingSpeed(vector<int>& piles, int h) {
-        int max = piles[0];
-        for(int i = 0; i < piles.size(); i++){
-            if(max < piles[i]){
-                max = piles[i];
-            }
-        }
-        int high = max;
+        int high = *max_element(piles.begin(), piles.end());
         int low = 1;
         int answer = high;
         while(low <= high){
