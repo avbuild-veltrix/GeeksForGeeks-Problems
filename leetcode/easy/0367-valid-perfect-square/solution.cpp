@@ -4,7 +4,7 @@ public:
         if(num == 0){
             return true;
         }
-        for(long long i = 1; i <= num; i++){
+        for(long long i = 1; i < num/2; i++){
             if(i*i == num){
                 return true;
             }
