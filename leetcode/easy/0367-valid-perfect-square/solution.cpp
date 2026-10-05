@@ -4,9 +4,16 @@ public:
         if(num == 0 || num == 1){
             return true;
         }
-        for(long long i = 1; i < num; i++){
-            if(i*i == num){
+        int high = num;
+        int low = 1;
+        while(low <= high){
+            long long mid = low + (high - low)/2;
+            if(mid*mid == num){
                 return true;
+            }else if(mid*mid < num){
+                low = mid + 1;
+            }else{
+                high = mid - 1;
             }
         }
         return false;
