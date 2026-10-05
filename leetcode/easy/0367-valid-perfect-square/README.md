@@ -39,9 +39,9 @@ Explanation: We return false because 3.742 * 3.742 = 14 and 3.742 is not an inte
 ## Solution
 
 **Language:** C++  
-**Runtime:** 2481 ms (beats 5.01%)  
-**Memory:** 7.9 MB (beats 0.49%)  
-**Submitted:** 2026-10-05T13:20:44.329Z  
+**Runtime:** 0 ms  
+**Memory:** 7.7 MB  
+**Submitted:** 2026-10-05T13:23:05.545Z  
 
 ```cpp
 class Solution {
@@ -50,7 +50,7 @@ public:
         if(num == 0){
             return true;
         }
-        for(long long i = 1; i <= num; i++){
+        for(long long i = 1; i < num/2; i++){
             if(i*i == num){
                 return true;
             }
