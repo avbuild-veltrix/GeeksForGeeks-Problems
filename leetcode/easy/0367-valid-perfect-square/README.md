@@ -40,17 +40,17 @@ Explanation: We return false because 3.742 * 3.742 = 14 and 3.742 is not an inte
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 7.7 MB  
-**Submitted:** 2026-10-05T13:23:05.545Z  
+**Memory:** 7.8 MB  
+**Submitted:** 2026-10-05T13:23:52.840Z  
 
 ```cpp
 class Solution {
 public:
     bool isPerfectSquare(int num) {
-        if(num == 0){
+        if(num == 0 || num == 1){
             return true;
         }
-        for(long long i = 1; i < num/2; i++){
+        for(long long i = 1; i < num; i++){
             if(i*i == num){
                 return true;
             }
