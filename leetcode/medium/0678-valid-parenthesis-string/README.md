@@ -58,8 +58,8 @@ Output: false
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 8.2 MB (beats 27.65%)  
-**Submitted:** 2026-10-04T09:49:02.666Z  
+**Memory:** 8.1 MB (beats 47.87%)  
+**Submitted:** 2026-10-05T12:42:42.669Z  
 
 ```cpp
 class Solution {
@@ -67,34 +67,23 @@ public:
     bool checkValidString(string s) {
         int low = 0;
         int high = 0;
-
-        for (char ch : s) {
-
-            if (ch == '(') {
+        for(int i = 0; i < s.length(); i++){
+            if(s[i] == '('){
                 low++;
                 high++;
-            }
-
-            else if (ch == ')') {
+            }else if(s[i] == ')'){
                 low--;
                 high--;
-            }
-
-            else { // '*'
+            }else{
                 low--;
                 high++;
             }
-
-            // We cannot have negative unmatched '('
             low = max(0, low);
-
-            // Even the maximum possibility is invalid
-            if (high < 0) {
+            if(high < 0){
                 return false;
             }
         }
-
-        return low == 0;
+        return (low == 0);
     }
 };
 ```
