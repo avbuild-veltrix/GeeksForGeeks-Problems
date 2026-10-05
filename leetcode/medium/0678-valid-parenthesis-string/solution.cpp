@@ -3,33 +3,22 @@ public:
     bool checkValidString(string s) {
         int low = 0;
         int high = 0;
-
-        for (char ch : s) {
-
-            if (ch == '(') {
+        for(int i = 0; i < s.length(); i++){
+            if(s[i] == '('){
                 low++;
                 high++;
-            }
-
-            else if (ch == ')') {
+            }else if(s[i] == ')'){
                 low--;
                 high--;
-            }
-
-            else { // '*'
+            }else{
                 low--;
                 high++;
             }
-
-            // We cannot have negative unmatched '('
             low = max(0, low);
-
-            // Even the maximum possibility is invalid
-            if (high < 0) {
+            if(high < 0){
                 return false;
             }
         }
-
-        return low == 0;
+        return (low == 0);
     }
 };
