@@ -45,29 +45,52 @@ Output: 3
 
 **Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 8.6 MB (beats 16.80%)  
-**Submitted:** 2026-10-06T09:40:20.094Z  
+**Memory:** 8.4 MB (beats 56.27%)  
+**Submitted:** 2026-10-06T09:41:22.657Z  
 
 ```cpp
+// class Solution {
+// public:
+//     int minAddToMakeValid(string s) {
+//         stack<char> st;
+//         int count = 0;
+//         for(int i = 0; i < s.length(); i++){
+//             if(s[i] == '('){
+//                 st.push(s[i]);
+//                 count++;
+//             }
+//             if(!st.empty() && st.top() == '(' && s[i] == ')'){
+//                 st.pop();
+//                 count--;
+//             }else if(s[i] == ')' && (st.empty() || st.top() != '(')){
+//                 st.push(s[i]);
+//                 count++;
+//             }   
+//         }
+//         return count;
+//     }
+// };
+
 class Solution {
 public:
     int minAddToMakeValid(string s) {
-        stack<char> st;
-        int count = 0;
-        for(int i = 0; i < s.length(); i++){
-            if(s[i] == '('){
-                st.push(s[i]);
-                count++;
+        int open = 0;
+        int ans = 0;
+
+        for(char c : s) {
+
+            if(c == '(') {
+                open++;
             }
-            if(!st.empty() && st.top() == '(' && s[i] == ')'){
-                st.pop();
-                count--;
-            }else if(s[i] == ')' && (st.empty() || st.top() != '(')){
-                st.push(s[i]);
-                count++;
-            }   
+            else {
+                if(open > 0)
+                    open--;
+                else
+                    ans++;
+            }
         }
-        return count;
+
+        return ans + open;
     }
 };
 ```
