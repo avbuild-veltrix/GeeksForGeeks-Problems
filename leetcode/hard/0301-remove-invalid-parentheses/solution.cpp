@@ -3,80 +3,47 @@ public:
 
     vector<string> ans;
 
-    void DFS(string &s, int index, int count,
-             int left, int right, string current,
-             bool prevRemoved) {
+    void DFS(string &s, int index, int count,int left, int right, string current,bool prevRemoved) {
 
-        // End of string
         if (index == s.length()) {
-
             if (left == 0 && right == 0 && count == 0) {
                 ans.push_back(current);
             }
-
             return;
         }
 
         char ch = s[index];
 
-        // '('
         if (ch == '(') {
-
-            // Remove '('
             if (left > 0) {
 
                 // Skip duplicate removal
-                if (index == 0 ||
-                    s[index] != s[index - 1] ||
-                    prevRemoved) {
+                if (index == 0 ||s[index] != s[index - 1] ||prevRemoved) {
 
-                    DFS(s, index + 1, count,
-                        left - 1, right,
-                        current, true);
+                    DFS(s, index + 1, count,left - 1, right,current, true);
                 }
             }
 
-            // Keep '('
-            DFS(s, index + 1, count + 1,
-                left, right,
-                current + '(',
-                false);
+            DFS(s, index + 1, count + 1,left, right,current + '(',false);
         }
 
-        // ')'
         else if (ch == ')') {
-
-            // Remove ')'
             if (right > 0) {
-
                 // Skip duplicate removal
-                if (index == 0 ||
-                    s[index] != s[index - 1] ||
-                    prevRemoved) {
+                if (index == 0 ||s[index] != s[index - 1] ||prevRemoved) {
 
-                    DFS(s, index + 1, count,
-                        left, right - 1,
-                        current, true);
+                    DFS(s, index + 1, count,left, right - 1,current, true);
                 }
             }
 
-            // Keep ')' only if valid
             if (count > 0) {
 
-                DFS(s, index + 1, count - 1,
-                    left, right,
-                    current + ')',
-                    false);
+                DFS(s, index + 1, count - 1,left, right,current + ')',false);
             }
         }
-
-        // Normal character
         else {
 
-            DFS(s, index + 1, count,
-                left, right,
-                current + ch,
-                false);
+            DFS(s, index + 1, count,left, right,current + ch,false);
         }
     }
 
@@ -108,11 +75,7 @@ public:
         }
 
         left = count;
-
-        // Start DFS
-        DFS(s, 0, 0,
-            left, right,
-            "", false);
+        DFS(s, 0, 0,left, right,"", false);
 
         return ans;
     }
