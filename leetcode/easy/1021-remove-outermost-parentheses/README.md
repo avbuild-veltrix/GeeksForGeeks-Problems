@@ -60,9 +60,9 @@ After removing outer parentheses of each part, this is "" + "" = "".
 ## Solution
 
 **Language:** C++  
-**Runtime:** 1 ms (beats 22.98%)  
+**Runtime:** 0 ms (beats 100.00%)  
 **Memory:** 8.8 MB (beats 80.67%)  
-**Submitted:** 2026-10-08T05:56:06.403Z  
+**Submitted:** 2026-10-08T05:57:25.948Z  
 
 ```cpp
 class Solution {
@@ -72,20 +72,39 @@ public:
         int count = 0;
         for(char ch : s){
             if(ch == '('){
-                if(count > 0){
-                    ans += ch;
-                }
+                if(count > 0) ans += ch;
                 count++;
             }else{
                 count--;
-                if(count > 0){
-                    ans += ch;
-                }
+                if(count > 0) ans += ch;
             }
         }
         return ans;
     }
 };
+
+
+// class Solution {
+// public:
+//     string removeOuterParentheses(string s) {
+//         string ans;
+//         int count = 0;
+//         for(char ch : s){
+//             if(ch == '('){
+//                 if(count > 0){
+//                     ans += ch;
+//                 }
+//                 count++;
+//             }else{
+//                 count--;
+//                 if(count > 0){
+//                     ans += ch;
+//                 }
+//             }
+//         }
+//         return ans;
+//     }
+// };
 ```
 
 ---
