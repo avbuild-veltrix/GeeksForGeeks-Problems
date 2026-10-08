@@ -45,9 +45,9 @@ Output: [""]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 4 ms (beats 86.37%)  
-**Memory:** 14.5 MB (beats 58.85%)  
-**Submitted:** 2026-10-07T14:09:31.964Z  
+**Runtime:** 3 ms (beats 91.02%)  
+**Memory:** 14.4 MB (beats 59.11%)  
+**Submitted:** 2026-10-07T15:07:09.461Z  
 
 ```cpp
 class Solution {
@@ -69,7 +69,7 @@ public:
         if (ch == '(') {
             if (left > 0) {
 
-                // Skip duplicate removal
+                // Removing '('
                 if (index == 0 ||s[index] != s[index - 1] ||prevRemoved) {
 
                     DFS(s, index + 1, count,left - 1, right,current, true);
@@ -81,7 +81,7 @@ public:
 
         else if (ch == ')') {
             if (right > 0) {
-                // Skip duplicate removal
+                // Removing ')'
                 if (index == 0 ||s[index] != s[index - 1] ||prevRemoved) {
 
                     DFS(s, index + 1, count,left, right - 1,current, true);
