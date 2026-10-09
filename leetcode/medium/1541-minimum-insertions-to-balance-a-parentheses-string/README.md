@@ -56,9 +56,9 @@ Explanation: Add '(' to match the first '))', Add '))' to match the last '('.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 7.8 MB  
-**Submitted:** 2026-10-09T04:52:21.002Z  
+**Runtime:** 5 ms (beats 60.79%)  
+**Memory:** 15.6 MB (beats 53.60%)  
+**Submitted:** 2026-10-09T04:54:04.179Z  
 
 ```cpp
 class Solution {
@@ -70,7 +70,7 @@ public:
             if(s[i] == '('){
                 open++;
             }else{
-                if(i+1 > s.length() && s[i+1] == ')'){
+                if(i+1 < s.length() && s[i+1] == ')'){
                     i++;
                 }else{
                     ans++;
@@ -82,7 +82,7 @@ public:
                 }
             }
         }
-        // ans = open * 2 + ans; 
+        ans = open * 2 + ans; 
         return ans;
     }   
 };
