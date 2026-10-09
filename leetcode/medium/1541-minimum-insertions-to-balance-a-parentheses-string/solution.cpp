@@ -7,7 +7,7 @@ public:
             if(s[i] == '('){
                 open++;
             }else{
-                if(i+1 > s.length() && s[i+1] == ')'){
+                if(i+1 < s.length() && s[i+1] == ')'){
                     i++;
                 }else{
                     ans++;
@@ -19,7 +19,7 @@ public:
                 }
             }
         }
-        // ans = open * 2 + ans; 
+        ans = open * 2 + ans; 
         return ans;
     }   
 };
